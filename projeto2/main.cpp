@@ -40,51 +40,63 @@ bool nao_acertou() {
             return true;
         }
     }
+    cout << "Parabéns você acertou! A paralavra era " << PALAVRA_SECRETA << "\n"; 
     return false;
 }
 
 bool nao_enforcou() {
     if (erros.size() == 5) {
         cout << "Você perdeu, tente novamente";
+        cout << "A palavra era: " << PALAVRA_SECRETA << "\n";
         return false;
     }
     return true;
 }
 
+void exibir_erros() {
+    cout << "Chutes errados:";
+    for (char letra : erros){
+        cout << letra << " ";
+    }
+    cout << "\n";
+}
+
+void exibir_palavra () {
+    for (char letra : PALAVRA_SECRETA) {
+        if (chutou[letra]) {
+            cout << letra << " ";
+        }
+        else {
+            cout << "_ ";
+        }
+    }
+    cout << "\n";    
+}
+
+void pegando_chute () {
+    cout << "Digite o seu chute: \n";
+    char chute;
+    cin >> chute;
+    cout << "\n";
+
+    chutou[toupper(chute)] =true;
+
+    if (letra_existe(chute)) {
+        cout << "\nVocê acertou! Seu chute está na palavra\n" ;
+    }
+    else {
+        cout << "\nVocê errou, seu chute não está na palavra secreta\n";
+
+        erros.push_back(toupper(chute)); // adiciona o chute a lista dinâmica, é um tipo de lista ordenada
+    }
+}
 
 int main () {
     abertura();
 
     while (nao_acertou() && nao_enforcou()) {
-        cout << "Chutes errados:";
-        for (char letra : erros){
-            cout << letra << " ";
-        }
-        cout << "\n";
-        for (char letra : PALAVRA_SECRETA) {
-            if (chutou[letra]) {
-                cout << letra << " ";
-            }
-            else {
-                cout << "_ ";
-            }
-        }
-        cout << "\n";
-
-        cout << "Digite o seu chute: \n";
-        char chute;
-        cin >> chute;
-        cout << "\n";
-
-        chutou[toupper(chute)] =true;
-
-        if (letra_existe(chute)) {
-            cout << "\nVocê acertou! Seu chute está na palavra\n" ;
-        }
-        else {
-            cout << "\nVocê errou, seu chute não está na palavra secreta\n";
-
-            erros.push_back(toupper(chute)); // adiciona o chute a lista dinâmica, é um tipo de lista ordenada
-        }
+        exibir_erros();
+        exibir_palavra();       
+        pegando_chute();
     }
 }
