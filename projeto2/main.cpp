@@ -6,11 +6,14 @@
 #include <string> // biblioteca de string
 #include <map> // pega o dicionário
 #include <vector> // pega a lista dinâmica
+#include <fstream> // biblioteca trata do fluxo de dados em uma string
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 
 // em c++ possui string
-const string PALAVRA_SECRETA = "MELANCIA"; 
+string palavra_secreta; 
 map<char, bool> chutou;
 vector<char> erros;
 
@@ -26,7 +29,7 @@ bool letra_existe (char chute) {
     //         return true;
     //     }
     // }
-    for (char letra : PALAVRA_SECRETA) { // basicamente um for in, percorre um intervalo, utilizado no c++11 (-std=c++11) para utilizar essa versão é necessário dizer ao compilador
+    for (char letra : palavra_secreta) { // basicamente um for in, percorre um intervalo, utilizado no c++11 (-std=c++11) para utilizar essa versão é necessário dizer ao compilador
         if (toupper(chute) == letra) {
             return true;
         }
@@ -35,19 +38,19 @@ bool letra_existe (char chute) {
 }
 
 bool nao_acertou() {
-    for (char letra : PALAVRA_SECRETA) {
+    for (char letra : palavra_secreta) {
         if (!chutou[letra]) {
             return true;
         }
     }
-    cout << "Parabéns você acertou! A paralavra era " << PALAVRA_SECRETA << "\n"; 
+    cout << "Parabéns você acertou! A paralavra era " << palavra_secreta << "\n"; 
     return false;
 }
 
 bool nao_enforcou() {
     if (erros.size() == 5) {
         cout << "Você perdeu, tente novamente";
-        cout << "A palavra era: " << PALAVRA_SECRETA << "\n";
+        cout << "A palavra era: " << palavra_secreta << "\n";
         return false;
     }
     return true;
@@ -62,7 +65,7 @@ void exibir_erros() {
 }
 
 void exibir_palavra () {
-    for (char letra : PALAVRA_SECRETA) {
+    for (char letra : palavra_secreta) {
         if (chutou[letra]) {
             cout << letra << " ";
         }
@@ -73,14 +76,17 @@ void exibir_palavra () {
     cout << "\n";    
 }
 
-void pegando_chute () {
+int pegando_chute (){
     cout << "Digite o seu chute: \n";
     char chute;
     cin >> chute;
     cout << "\n";
 
     chutou[toupper(chute)] =true;
+    return chute;
+}
 
+void conferindo_chute (int chute) {
     if (letra_existe(chute)) {
         cout << "\nVocê acertou! Seu chute está na palavra\n" ;
     }
@@ -91,12 +97,46 @@ void pegando_chute () {
     }
 }
 
+vector<string> ler_arquivo() {
+    ifstream arquivo; // é um tipoi de dado que é utilizado para ler arquivos
+    arquivo.open("palavras.txt");
+    if (arquivo.is_open()) { // utilizado para lidar com erros, tipo try e except
+        int quantidade_palavras;
+        arquivo >> quantidade_palavras; // primeira linha do aqruivo é um int
+
+        vector<string> palavras_do_arquivo;
+
+        for (int i = 0; i < quantidade_palavras; i ++) {
+            string palavra_lida;
+            arquivo >> palavra_lida;
+            palavras_do_arquivo.push_back(palavra_lida);
+        }
+
+        arquivo.close(); // é uma boa prática sempre fechar o arquivo depois de utilizar
+        return palavras_do_arquivo;
+    }
+    else {
+        cout << "Não foi possível acessar o banco de palavras\n";
+        exit(0); // para todo o código até o da main
+    }
+}
+
+void sorteia_palavra() {
+    vector<string> palavras = ler_arquivo();
+
+    srand(time(NULL));
+    int indice_sorteado = rand() % palavras.size();
+
+    palavra_secreta = palavras[indice_sorteado];
+}
+
 int main () {
     abertura();
-
+    sorteia_palavra();
     while (nao_acertou() && nao_enforcou()) {
         exibir_erros();
-        exibir_palavra();       
-        pegando_chute();
+        exibir_palavra();        
+        char chute = pegando_chute();       
+        conferindo_chute(chute);
     }
 }
