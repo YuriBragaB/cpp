@@ -1,9 +1,8 @@
 #include <iostream>
 #include <vector>
 
-extern std::vector <char> erros;
 
-void exibir_erros() {
+void exibir_erros(std::vector <char>& erros) {
     std::cout << "Chutes errados:";
     for (char letra : erros){
         std::cout << letra << " ";

@@ -1,11 +1,12 @@
 #include <iostream>
 #include "letra_existe.hpp"
 #include <vector>
+#include <string>
 
-extern std::vector <char> erros;
 
-void conferindo_chute (int chute) {
-    if (letra_existe(chute)) {
+
+void conferindo_chute (char chute, std::vector <char>& erros, std::string& palavra_secreta) {
+    if (letra_existe(chute, palavra_secreta)) {
         std::cout << "\nVocê acertou! Seu chute está na palavra\n" ;
     }
     else {

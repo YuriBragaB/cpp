@@ -2,9 +2,9 @@
 #include <map>
 
 
-extern std::map <char, bool> chutou;
 
-char pegando_chute (){
+
+char pegando_chute (std::map <char, bool>& chutou){
     std::cout << "Digite o seu chute: \n";
     char chute;
     std::cin >> chute;

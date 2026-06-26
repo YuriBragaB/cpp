@@ -13,6 +13,11 @@
 // extern ignora o erro de variável não definida
 // quando for compilar é possível compilar apenas uma unidade de tradução por vez
 // variáveis globais são ruins de ser utilizadi, pois dificulta no controle do código(não sabe quem altera as variáveis), por isso é melhor passar asa variáveis como parâmetros e bota-las no escopo da int main
+// em c+ os ponteiros ficaram mais fácil, é so utilizar as referências (&), pare muito com o ponteiro, porém é mais fácil
+// referência poupa memória
+// Uma referência em C++ poupa tempo de processamento e memória RAM ao evitar a cópia desnecessária de objetos grandes. Em vez de duplicar dados, ela atua apenas como um apelido (ou rótulo) para o dado original que já existe na memória
+// const define uma promessa de que não se vai alterar esse valor
+
 
 #include <iostream> // i = input, o = outpot, stream = fluxo
 #include <string> // biblioteca de string
@@ -32,21 +37,20 @@
 // ao final dos include é gerado uma unidade de tradução, que é utilizada para compilar o código
 using namespace std;
 
-string palavra_secreta;
+string palavra_secreta; // não é bom ter variáveis globais, pois não se sabe onde elas são alteradas no código, referência resolve esse problema junto com o const
 map<char, bool> chutou;
-vector<char> chutes_errados;
 vector <char> erros;
 
 int main () {
     abertura();
 
-    sorteia_palavra();
+    sorteia_palavra(palavra_secreta);
 
-    while (nao_acertou() && nao_enforcou()) {
-        exibir_erros();
-        exibir_palavra();
+    while (nao_acertou(palavra_secreta, chutou) && nao_enforcou(erros, palavra_secreta)) {
+        exibir_erros(erros);
+        exibir_palavra(palavra_secreta, chutou);
 
-        char chute = pegando_chute();
-        conferindo_chute(chute);
+        char chute = pegando_chute(chutou);
+        conferindo_chute(chute, erros, palavra_secreta);
     }
 }
