@@ -1,2 +1,4 @@
 #pragma once
-void exibir_erros(std::vector <char>& erros);
+namespace forca {
+    void exibir_erros(std::vector <char>& erros);
+}

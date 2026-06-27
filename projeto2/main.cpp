@@ -17,7 +17,23 @@
 // referência poupa memória
 // Uma referência em C++ poupa tempo de processamento e memória RAM ao evitar a cópia desnecessária de objetos grandes. Em vez de duplicar dados, ela atua apenas como um apelido (ou rótulo) para o dado original que já existe na memória
 // const define uma promessa de que não se vai alterar esse valor
-
+// namespace é como se fosse uma pasta virtual, algo para organizar melhor o nosso código
+// para utilizar o namespace é necessário utilizare iguasl o std
+// std é um namespace, que pega as funções da biblioteca padrão
+// :: é um operdado de busca de namespace
+// o nome do :: é operador de resolução
+// é possível criar um namespace:
+//      namespace nomedonamespace {bloco de código}
+// using namespace é um aviso para o compilador de que se nao tiver nada no operador de resolução é bem possível que seja o que vem dps do namespace
+// ::std = uma resolução de um namespace
+// é ruim utilizar using namespace pois tira a liberdade do nome nos códigos, pois já pode existir na biblioteca std::
+// using namespace tira o poder sobre o código
+// não é para utilizar namespace no cabeçario(head files ou hpp)
+// colocar using namespace dentro de um escopo é ok
+// é possível ter vários namespace, tornando eles muito grandes
+// é possível renomear um namespace, ex: a = std
+// é comum empresas grandes mudarem os nomes do std
+// nunca adicione um using namespace em um cabeçalho
 
 #include <iostream> // i = input, o = outpot, stream = fluxo
 #include <string> // biblioteca de string
@@ -35,22 +51,21 @@
 #include "pegando_chute.hpp"
 #include "conferindo_chute.hpp"
 // ao final dos include é gerado uma unidade de tradução, que é utilizada para compilar o código
-using namespace std;
 
-string palavra_secreta; // não é bom ter variáveis globais, pois não se sabe onde elas são alteradas no código, referência resolve esse problema junto com o const
-map<char, bool> chutou;
-vector <char> erros;
+static std::string palavra_secreta; // não é bom ter variáveis globais, pois não se sabe onde elas são alteradas no código, referência resolve esse problema
+static std::map<char, bool> chutou; // para não permetir utilizar extern é necessário botar a variável static, deixando as variáveis apenas na translate unit que foi colcado o static, nesse caso0 na  main.cpp
+static std::vector <char> erros; // quando precisa definir variáveis fora da função é necessário utilizar o static, para imperdir que a variável seja global
 
 int main () {
-    abertura();
+    forca::abertura();
 
-    sorteia_palavra(palavra_secreta);
+    forca::sorteia_palavra(palavra_secreta);
 
-    while (nao_acertou(palavra_secreta, chutou) && nao_enforcou(erros, palavra_secreta)) {
-        exibir_erros(erros);
-        exibir_palavra(palavra_secreta, chutou);
+    while (forca::nao_acertou(palavra_secreta, chutou) && forca::nao_enforcou(erros, palavra_secreta)) {
+        forca::exibir_erros(erros);
+        forca::exibir_palavra(palavra_secreta, chutou);
 
-        char chute = pegando_chute(chutou);
-        conferindo_chute(chute, erros, palavra_secreta);
+        char chute = forca::pegando_chute(chutou);
+        forca::conferindo_chute(chute, erros, palavra_secreta);
     }
 }

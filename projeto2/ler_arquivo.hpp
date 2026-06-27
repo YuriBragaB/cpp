@@ -2,4 +2,6 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> ler_arquivo();
+namespace forca{
+    std::vector<std::string> ler_arquivo();
+}

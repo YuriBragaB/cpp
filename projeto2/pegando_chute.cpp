@@ -1,15 +1,15 @@
 #include <iostream>
 #include <map>
 
+namespace forca {
+    char pegando_chute (std::map <char, bool>& chutou){
+        std::cout << "Digite o seu chute: \n";
+        char chute;
+        std::cin >> chute;
+        std::cout << "\n";
 
-
-
-char pegando_chute (std::map <char, bool>& chutou){
-    std::cout << "Digite o seu chute: \n";
-    char chute;
-    std::cin >> chute;
-    std::cout << "\n";
-
-    chutou[toupper(chute)] =true;
-    return chute;
+        chutou[toupper(chute)] =true;
+        return chute;
+    }
 }
+
