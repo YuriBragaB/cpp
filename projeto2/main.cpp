@@ -34,6 +34,13 @@
 // é possível renomear um namespace, ex: a = std
 // é comum empresas grandes mudarem os nomes do std
 // nunca adicione um using namespace em um cabeçalho
+// stack(pilha) é um algoritmo de memória, quando é chamado a função ela é alocada em um espaço, quando ela é finalizada sai desse espaço
+// stack frame é um espaço onde é alocado na memória 
+// a maioria das linguagens compiladas utilizam stacks
+// #if 0 + #endif ignora o escopo que está entre o código
+// heap é um espaço do código que é compartilhado em todas funções, fora da stack
+// quando n é dado o tamanho de uma vector é alocado na heap, que é mais custoso
+// para ser alocado na steak é necessário criar um array
 
 #include <iostream> // i = input, o = outpot, stream = fluxo
 #include <string> // biblioteca de string
@@ -52,11 +59,13 @@
 #include "conferindo_chute.hpp"
 // ao final dos include é gerado uma unidade de tradução, que é utilizada para compilar o código
 
-static std::string palavra_secreta; // não é bom ter variáveis globais, pois não se sabe onde elas são alteradas no código, referência resolve esse problema
-static std::map<char, bool> chutou; // para não permetir utilizar extern é necessário botar a variável static, deixando as variáveis apenas na translate unit que foi colcado o static, nesse caso0 na  main.cpp
-static std::vector <char> erros; // quando precisa definir variáveis fora da função é necessário utilizar o static, para imperdir que a variável seja global
+
 
 int main () {
+    std::string palavra_secreta;
+    std::map<char, bool> chutou;
+    std::vector <char> erros;
+
     forca::abertura();
 
     forca::sorteia_palavra(palavra_secreta);
