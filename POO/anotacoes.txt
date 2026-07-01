@@ -1,0 +1,38 @@
+será feito um projeto de banco
+utilizando POO
+
+POO evita conflitos, criando um novo tipo
+POO cria um objeto, é um novo tipo de dado
+
+struct cria um novo tipo(um objeto), esse novo tipo pode ser utilizado como uma variável
+a struct criada fica no stack frame(um espaço onde é alocado na memória em geral)
+para cirar um objeto é necessário fazer: struct_nome + nome do objeto
+struct cria um novo tipo
+para cada objeto criado a partir de uma struct é posto em um local da memória
+
+return sozinho: 
+    Um return sozinho (sem nenhum valor ou expressão na frente) é usado exclusivamente em funções do tipo void para encerrar a execução da função imediatamente, além de 
+    retornar o controle para onde ela foi chamada
+
+é necessário passar o objeto como referência para a function alter o objeto, pois a struct fica no stack frame(na memória que semnpre fica ativa), já o objeto fica na stack(memória que some)
+
+o principal ponto do POO é que ele une as variáveis com as funtions, ajuda na reutilização e compreenssão do código
+
+variáveis que ficam dentro da struct são chamadas de atributos ou propriedades
+
+c++ possui struct ou class para criar um novo objeto, uma classe é como se fosse uma forma, a partir da classe pode ser criado vários objetos(1(classe):n(objeto))
+class é utilizado em várias linguagens
+struct e class são quase a mesma coisa
+o que é criado a partir da calsse é um objeto, do tipo nome_da_classe
+float, int, double, string = são classes
+
+em POO classes geram objetos
+POO é uma nova forma de pensar
+a progamcão que eu sei é procedural, POO não utiliza esse tipo
+POO é um paradigma da programação
+
+classe é a forma de bolo. Objeto é o bolo em si. Quando criamos uma variável a partir de uma classe, estamos criando um objeto, e a classe é apenas o tipo deste objeto
+
+Que a ABSTRAÇÂO é um pilar da orientação a objetos e se refere à prática de abstrair algo do mundo real, trazendo apenas o que for necessário para o nosso sistema
+
+que objeto (ou instância) é o nome dado para cada valor gerado através de uma Struct
