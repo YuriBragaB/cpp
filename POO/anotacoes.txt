@@ -36,3 +36,10 @@ classe é a forma de bolo. Objeto é o bolo em si. Quando criamos uma variável 
 Que a ABSTRAÇÂO é um pilar da orientação a objetos e se refere à prática de abstrair algo do mundo real, trazendo apenas o que for necessário para o nosso sistema
 
 que objeto (ou instância) é o nome dado para cada valor gerado através de uma Struct
+
+diferente da programação procedual, em POO tudo está junto(dados e comportamentos)
+o maior benefício de POO é conseguir juntar
+criar funções diretamente dentro de uma classe, chamadas de método da classe, nelas n precisa passar ponteiro nem o objeto como argumento
+
+arquivo de cabeçalho possuem definições
+#pragma once possibilita que n inclua o arquivo v
