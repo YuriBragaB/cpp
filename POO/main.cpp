@@ -1,18 +1,9 @@
 #include <iostream>
 #include <string>
-
-struct Conta {
-    std::string numero;
-    std::string cpf_titular;
-    std::string nome_titular;
-    float saldo;
-
-
-};
-
+#include "conta.hpp"
 
 int main (void) {
-    Conta conta;
+    conta conta;
     conta.saldo = 500;
     conta.depositar(500);
     conta.sacar(100);

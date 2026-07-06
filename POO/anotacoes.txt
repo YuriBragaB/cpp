@@ -43,3 +43,9 @@ criar funções diretamente dentro de uma classe, chamadas de método da classe,
 
 arquivo de cabeçalho possuem definições
 #pragma once possibilita que n inclua o arquivo v
+
+atributos -> variáveis
+métodos -> funções
+
+os métodos não são colocados em diferentes locais da mémoria, os atriubtos são
+pois, os atributos mudam dependendo do objeto, os métodos não

@@ -6,13 +6,13 @@ void conta::sacar (float valor_a_sacar){
         std::cout << "Não pode sacar valor negativo\n";
         return;
     }
-    if (valor_a_sacar > saldo) {
+    if (valor_a_sacar > conta::saldo) {
         std::cout << "Saldo insuficiente\n";
         return;
     }
     conta::saldo -= valor_a_sacar;
 }
-void depositar (float valor_a_depositar) {
+void conta::depositar (float valor_a_depositar) {
     if (valor_a_depositar < 0) {
         std::cout << "Não pode sacar valor negativo\n";
         return;
