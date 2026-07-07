@@ -49,3 +49,25 @@ métodos -> funções
 
 os métodos não são colocados em diferentes locais da mémoria, os atriubtos são
 pois, os atributos mudam dependendo do objeto, os métodos não
+
+a diferença de uma class para struct é que tudo em uma struct por padrão é público, já na class tudo por padrão privado
+
+private significa que só é possível acessar os atributos dentro da própria classe
+é importante deixar privado para evistar que seja feito algo no código que você não queira
+
+para ter acesso a um atributo privado é só criar um método que mostre esse atributo
+funções geters pegam os valores dos atributos e mostram
+para definir o método nome_da_classe::nome_da_função
+é uma boa prática inicializar as variáveis ex: float saldo = 0;
+
+método seters muda os atributos 
+
+seters = muda(seta algo)
+geters = ler(pega algo)
+
+abstração = pegar algo do mundo real e abstrair o suficiente para virar código
+primeiro pilar = abstração
+
+segundo pilar = encapsulamento
+encapsulamento = liberar o acesso apenas para o que é necessário
+O encapsulamento ajuda a garantir que nossos objetos se mantenham em um estado consistente, e também facilita o uso de nossa classe por outros desenvolvedores.
