@@ -5,9 +5,12 @@ class conta {
     std::string numero;
     std::string cpf_titular;
     std::string nome_titular;
-    float saldo = 0;
+    float saldo;
 
 public:
+    conta() = delete;
+    conta(std::string numero, std::string cpf_titular, std::string nome_titular);
+
     void sacar(float valor_a_sacar);
     void depositar(float valor_a_depositar);
 
@@ -16,7 +19,4 @@ public:
     std::string recupera_cpf_titular();
     std::string recupera_numero();
 
-    void definir_nome_titular(std::string nome);
-    void definir_cpf_titular(std::string cpf);
-    void definir_numero(std::string telefone);
 };

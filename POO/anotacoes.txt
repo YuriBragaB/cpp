@@ -71,3 +71,30 @@ primeiro pilar = abstração
 segundo pilar = encapsulamento
 encapsulamento = liberar o acesso apenas para o que é necessário
 O encapsulamento ajuda a garantir que nossos objetos se mantenham em um estado consistente, e também facilita o uso de nossa classe por outros desenvolvedores.
+
+o principal motivo para utilizar class é o padrão das outras linguagens
+é possível utilizar só class
+
+é possível já iniciar um objeton atribuindo um valor, por meio dos construtores, é ótimo inicializar as variáveis em cpp
+para criar um construtor é necessário colocar o nome da classe(seus_parâmetros), é posto na public
+é melhor inicializar tudo do objeto direto de um único método
+
+this -> aponta para o objeto 
+this -> é uma variável especial que atua como ponteiro, apontando para o objeto
+
+construtores tiram a necessidade de utilizar um seters
+quando é criado um construtor o padrão é deletado, para deixar explicito é bom colocar um conta() = delete;
+é tão comum inicializar o objeto pelo método constutor que possui um operador para diminuir a sintaxe o :, que vem depois da função
+esse método de constução com o : é bem esquisito 
+ex:
+conta::conta(std::string numero, std::string cpf_titular, std::string nome_titular)
+    :numero(numero),
+    cpf_titular(cpf_titular),
+    nome_titular(nome_titular),
+    saldo(0)
+{      
+}
+
+em POO é importante o conceito de imutabilidade, aplicando-o no máximo possível
+para tornar uma parte do objeto imutável é bom passar como parâmetro do método de construção, pois substitui os métodos seters
+Listas de inicialização evitam a inicialização duplicada de objetos relacionados. Se você possui como atributo um objeto (uma string, por exemplo), sem a lista de inicialização este atributo vai ser instanciado 2 vezes.
