@@ -1,28 +1,26 @@
 #pragma once
 #include <string>
+#include "Titular.hpp"
 
-class conta {
+class Conta {
     static int numero_de_contas;
 
     std::string numero;
-    std::string cpf_titular;
-    std::string nome_titular;
+    Titular titular;
     float saldo;
 
-    void verifica_tamanho_do_nome();
-    
 public:
-    conta() = delete;
-    conta(std::string numero, std::string cpf_titular, std::string nome_titular);
+    Conta() = delete;
+    Conta(std::string numero, Titular titular);
 
-    ~conta();
+    ~Conta();
 
     void sacar(float valor_a_sacar);
     void depositar(float valor_a_depositar);
 
+    std::string recupera_cpf();
+    std::string recupera_nome();
     float recupera_saldo();
-    std::string recupera_nome_titular();
-    std::string recupera_cpf_titular();
     std::string recupera_numero();
     static int recupera_numero_de_contas();
 

@@ -1,64 +1,57 @@
-#include "conta.hpp"
+#include "Conta.hpp"
 #include <iostream>
 
-int conta::numero_de_contas = 0;
+int Conta::numero_de_contas = 0;
 
-conta::conta(std::string numero, std::string cpf_titular, std::string nome_titular)
+Conta::Conta(std::string numero, Titular titular)
     :numero(numero),
-    cpf_titular(cpf_titular),
-    nome_titular(nome_titular),
+    titular(titular),
     saldo(0)
 {
-    verifica_tamanho_do_nome();
     numero_de_contas ++;      
 }
 
-conta::~conta(){
+Conta::~Conta(){
     numero_de_contas --;
 }
 
-void conta::sacar (float valor_a_sacar){
+void Conta::sacar (float valor_a_sacar){
     if (valor_a_sacar < 0) {
         std::cout << "Não pode sacar valor negativo\n";
         return;
     }
-    else if (valor_a_sacar > conta::saldo) {
+    else if (valor_a_sacar > Conta::saldo) {
         std::cout << "Saldo insuficiente\n";
         return;
     }
-    conta::saldo -= valor_a_sacar;
+    Conta::saldo -= valor_a_sacar;
 }
-void conta::depositar (float valor_a_depositar) {
+void Conta::depositar (float valor_a_depositar) {
     if (valor_a_depositar < 0) {
         std::cout << "Não pode depositar valor negativo\n";
         return;
     }
-    conta::saldo += valor_a_depositar;
+    Conta::saldo += valor_a_depositar;
 }
 
-int conta::recupera_numero_de_contas() {
+int Conta::recupera_numero_de_contas() {
     return numero_de_contas;
 }
 
-float conta::recupera_saldo(){
+float Conta::recupera_saldo(){
     return saldo;
 }
 
-std::string conta::recupera_nome_titular(){
-    return nome_titular;
+std::string Conta::recupera_nome(){
+    return titular.recupera_nome();
 }
 
-std::string conta::recupera_cpf_titular(){
-    return cpf_titular;
+std::string Conta::recupera_cpf(){
+    return titular.recupera_cpf();
 }
 
-std::string conta::recupera_numero(){
+std::string Conta::recupera_numero(){
     return numero;
 }
 
-void conta::verifica_tamanho_do_nome(){
-        if (nome_titular.size() < 5){
-        std::cout << "Nome muito curto\n";
-        exit(1);
-    }
-}
+

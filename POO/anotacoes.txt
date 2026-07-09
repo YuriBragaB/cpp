@@ -118,3 +118,13 @@ Sempre que um objeto sai do escopo em que ele foi criado, o método destrutor é
 o método chamado "destrutor" tem a finalidade de liberar recursos alocados na memória dinamicamente
 
 métodos privados podem ser utilizados para fazer validações internas, facilita a legibilidade do código, SEGUNDO PILAR(encapsulamento)
+
+é possível ter objetos compondo outros objetos, por exemplo(string)
+
+quando um objeto contém outro objeto é chamado de composição("uma Conta tem um Titular")
+acessa os métodos através do atributo titular
+foi criado dentro da classe conta o atributo objeto
+o nome dado é composição de objetos
+
+é possível criar um objeto temporário, passando ele como parâmetro de uma função, é melhor para otimizações
+Quando temos classes menores, mais concisas, fica mais fácil reutilizá-las em diferentes partes do sistema, além de também ser mais fácil dar manutenção em seu código
