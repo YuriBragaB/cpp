@@ -107,6 +107,7 @@ tem que definir o método que utiliza uma static com static antes da função
 
 para pegar os eleemntos da classe é necessário utilizar o operador de resolução(::)
 membros statics são comuns a todos os objetos, pois um objeto conhece sua classe variável static só ocupa um local na memória
+membros da classe são chamados de membros estáticos
 
 existe método destutor, que é dado com um ~ antes do nome da classe(~conta)
 destrutor é um método executado quando o objeto é liberado
