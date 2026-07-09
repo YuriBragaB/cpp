@@ -98,3 +98,22 @@ conta::conta(std::string numero, std::string cpf_titular, std::string nome_titul
 em POO é importante o conceito de imutabilidade, aplicando-o no máximo possível
 para tornar uma parte do objeto imutável é bom passar como parâmetro do método de construção, pois substitui os métodos seters
 Listas de inicialização evitam a inicialização duplicada de objetos relacionados. Se você possui como atributo um objeto (uma string, por exemplo), sem a lista de inicialização este atributo vai ser instanciado 2 vezes.
+
+é possível definir um atributo geral para a classe, que não é específico de cada objeto, para isso ocorrer é necessário criar um membro estático(static)
+ele tem que ser impletementado no cpp dps no headers
+static = propriedade não é do objeto é da classe
+static = algo estático na classe, sempre está na classe
+tem que definir o método que utiliza uma static com static antes da função
+
+para pegar os eleemntos da classe é necessário utilizar o operador de resolução(::)
+membros statics são comuns a todos os objetos, pois um objeto conhece sua classe variável static só ocupa um local na memória
+
+existe método destutor, que é dado com um ~ antes do nome da classe(~conta)
+destrutor é um método executado quando o objeto é liberado
+tudo que o construtor faz o destrutor tem que cuidar para fazer, porém n é necessário lidar com os primitivos
+destrutor = liberar o recurso(fechar arquivos, ajustar uma variável de incremento, ponteiro, quando sai de escopo)
+destruto utiliza o ~ 
+Sempre que um objeto sai do escopo em que ele foi criado, o método destrutor é chamado. Dessa forma nós podemos liberar todo o recurso que foi alocado.
+o método chamado "destrutor" tem a finalidade de liberar recursos alocados na memória dinamicamente
+
+métodos privados podem ser utilizados para fazer validações internas, facilita a legibilidade do código, SEGUNDO PILAR(encapsulamento)
