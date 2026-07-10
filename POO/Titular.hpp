@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
+#include "Cpf.hpp"
 
 class Titular {
-    std::string cpf; //desafio extrair a conta cpf
+    Cpf cpf;; //desafio extrair a conta cpf
     std::string nome;
 
     void verifica_tamanho_do_nome();

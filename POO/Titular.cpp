@@ -16,5 +16,5 @@ std::string Titular::recupera_nome(){
     return nome;
 }
 std::string Titular::recupera_cpf(){
-    return cpf;
+    return cpf.recupera_cpf();
 }
