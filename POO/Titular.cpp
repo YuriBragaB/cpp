@@ -1,8 +1,10 @@
 #include "Titular.hpp"
 #include <iostream>
 
-Titular::Titular(std::string cpf,std::string nome):cpf(cpf), nome(nome){
+Titular::Titular(Cpf cpf,std::string nome):cpf(cpf), nome(nome){
     verifica_tamanho_do_nome();
+    void verifica_digitos(std::string cpf);
+    void verifica_numero(std::string cpf);
 }
 
 void Titular::verifica_tamanho_do_nome(){

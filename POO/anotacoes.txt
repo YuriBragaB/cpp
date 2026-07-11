@@ -128,3 +128,8 @@ o nome dado é composição de objetos
 
 é possível criar um objeto temporário, passando ele como parâmetro de uma função, é melhor para otimizações
 Quando temos classes menores, mais concisas, fica mais fácil reutilizá-las em diferentes partes do sistema, além de também ser mais fácil dar manutenção em seu código
+
+conversão implícita é algo que ocorre debaixo dos panos, por meio de um constutor, o c++ procura na classe algum construtor que consiga criar o tipo pedido
+pode ser utilizado para passar uma lista de caracteres ou uma string
+explicit possibilitaque seja executado apenas por uma conversão, desabilitando a conversão implícita
+quando é passado um tipo errado o c++ procura

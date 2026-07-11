@@ -3,7 +3,7 @@
 #include "Conta.hpp"
 
 int main (void) {
-    Conta uma_conta("32", Titular("08070396326", "yuri braga"));
+    Conta uma_conta("32", Titular(Cpf("08070396326"), "yuri braga"));
     uma_conta.depositar(500);
     uma_conta.sacar(100);
     std::cout << "o saldo da uma_conta é: " << uma_conta.recupera_saldo() << "\n";
