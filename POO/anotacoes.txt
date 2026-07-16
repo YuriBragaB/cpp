@@ -133,3 +133,27 @@ conversão implícita é algo que ocorre debaixo dos panos, por meio de um const
 pode ser utilizado para passar uma lista de caracteres ou uma string
 explicit possibilitaque seja executado apenas por uma conversão, desabilitando a conversão implícita
 quando é passado um tipo errado o c++ procura
+
+O .cpp não explica o .h. Ele implementa o que foi declarado no .h.
+h não precisa saber como os métodos funcionam; ele só precisa declarar que eles existem, por isso não inclui o .cpp nos .hpp
+o compilador apenas registra algo como:
+
+"existe uma função chamada Pessoa::recupera_nome(). Depois alguém vai me entregar o código dela."
+
+e esse "alguém" é justamente o Pessoa.cpp, compilado separadamente.
+.h → "Existe esta classe e ela faz estas coisas."
+.cpp → "Aqui está o código que faz essas coisas acontecerem."
+linker → "Vou conectar quem usa os métodos com quem os implementa."
+
+por isso o .h nunca precisa incluir o .cpp: ele apenas declara a interface, e a implementação será encontrada depois pelo linker. Essa separação é o que permite organizar grandes projetos em vários arquivos sem duplicar código.
+
+sempre se lembre que qualquer repeticão de código é ruim, por muitas vezes é recomendado trocar
+
+para evitar as repeticões é necessário criar uma classe pai e fazer ela transmitir suas características para os filhos, por meio da herança
+a pai faz a herança de todas as características para a filha
+é possível utilizar o construtor da classe pai
+para dizer que uma classe herda algo de uma classe é necessário colocar (nome_da_classe_filho : public nome_da_classe_pai), a classe filha herda todos os membros da classe pai, por isso o nome herança
+herança é um dos pilares de POO
+algo privado apenas a classe pdoe acessar, nem mesmo por herança é possível
+é possível as classes filhos acessarem caso o membro esteja incluído em um protected
+a partir de uma classe pai é possível especializar uma classe filho

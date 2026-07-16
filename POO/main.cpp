@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include "Conta.hpp"
+#include "Titular.hpp"
+#include "Cpf.hpp"
+#include "Funcionario.hpp"
 
 int main (void) {
     Conta uma_conta("32", Titular(Cpf("08070396326"), "yuri braga"));
@@ -10,5 +13,7 @@ int main (void) {
 
     std::cout << "O seu nome é: " << uma_conta.recupera_nome() << "\n";
     std::cout << "O seu cpf é: " << uma_conta.recupera_cpf() << "\n";
+
+    Funcionario funcionario(Cpf("08070396343"), "gabriel", 100.0);
     return 0;
 }
