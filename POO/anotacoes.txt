@@ -162,4 +162,23 @@ this -> pega o objeto atual, lembre-se disso(this -> ) é uma ótima forma de ac
 
 é horrível repetir o nome de qualquer elemento de uma classe
 
-classe pai pode ser chamada de classe
+classe pai pode ser chamada de classe base
+
+para utilizar uma function que passa como refência de uma classe filha, que esteja reescrevendo é necessário saber qual a classe que está chamando, pois por padrão vai para a pai
+para a classe analisar o tipo é necessário utilizar a palavra reservada virtual, a palavra virtual é colocado antes do retorno
+virtual só é posto na classe pai
+virtual perde um pouco de performance, pois é processado na hora de execução
+método virtual é um método que pode ser sobescrito 
+ao ter um método virtual, em tempo de execução, ou seja, enquanto o programa está funcionando, a decisão de qual o método correto para se executar vai ser tomada
+
+override é uma palavra auxiliadora para avisar quando um método sobescreve o outro, evita um erro de nome, que é bem chato de achar
+
+quando adiciona virutal o compilador adiciona um novo membro, que possui um ponteiro que aponta para a vtable
+virtual adiciona um novo memebro, que aponta para os métoddos corretos, por isso diminui o tempo de execução
+
+não é para sobescrever um destrutor, é necessário adicionar
+
+é necessário avisar que a classe pode ser estendida, para conseguir criar novos destrutores nas classes pais
+se não marcar como vritual ocorre vazamento de memória
+é possível avisar que uma classe é a final do código
+quando a classe não é extendida é possível colocar um final, tirando a necessidade de utilziar um construtor

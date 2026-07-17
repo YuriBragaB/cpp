@@ -14,9 +14,9 @@ public:
     Conta() = delete;
     Conta(std::string numero, Titular titular);
 
-    ~Conta();
+    virtual ~Conta();
 
-    void sacar(float valor_a_sacar);
+    virtual void sacar(float valor_a_sacar);
     void depositar(float valor_a_depositar);
 
     std::string recupera_cpf();

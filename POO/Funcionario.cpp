@@ -7,9 +7,11 @@ Funcionario::Funcionario(Cpf cpf, std::string nome, float salario):
 {
 }
 
-Funcionario::~Funcionario() {
+Funcionario::~Funcionario()
+{
 }
 
-std::string Funcionario::recupera_nome() {
+std::string Funcionario::recupera_nome() 
+{
     return this -> Pessoa::nome; 
 }

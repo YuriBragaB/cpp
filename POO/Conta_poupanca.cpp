@@ -4,10 +4,10 @@
 Conta_poupanca::Conta_poupanca(std::string numero, Titular titular)
     :Conta(numero,titular) 
 {
-
 }
 
-void Conta_poupanca::sacar (float valor_a_sacar){
+void Conta_poupanca::sacar (float valor_a_sacar)
+{
     if (valor_a_sacar < 0) {
         std::cout << "Não pode sacar valor negativo\n";
         return;

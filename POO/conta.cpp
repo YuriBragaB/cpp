@@ -15,7 +15,8 @@ Conta::~Conta(){
     numero_de_contas --;
 }
 
-void Conta::sacar (float valor_a_sacar){
+void Conta::sacar (float valor_a_sacar)
+{
     if (valor_a_sacar < 0) {
         std::cout << "Não pode sacar valor negativo\n";
         return;
@@ -30,7 +31,9 @@ void Conta::sacar (float valor_a_sacar){
     }
     saldo -= valor_do_saque;
 }
-void Conta::depositar (float valor_a_depositar) {
+
+void Conta::depositar (float valor_a_depositar) 
+{
     if (valor_a_depositar < 0) {
         std::cout << "Não pode depositar valor negativo\n";
         return;
@@ -38,23 +41,28 @@ void Conta::depositar (float valor_a_depositar) {
     saldo += valor_a_depositar;
 }
 
-int Conta::recupera_numero_de_contas() {
+int Conta::recupera_numero_de_contas() 
+{
     return numero_de_contas;
 }
 
-float Conta::recupera_saldo(){
+float Conta::recupera_saldo()
+{
     return saldo;
 }
 
-std::string Conta::recupera_nome(){
+std::string Conta::recupera_nome()
+{
     return titular.recupera_nome();
 }
 
-std::string Conta::recupera_cpf(){
+std::string Conta::recupera_cpf()
+{
     return titular.recupera_cpf();
 }
 
-std::string Conta::recupera_numero(){
+std::string Conta::recupera_numero()
+{
     return numero;
 }
 
