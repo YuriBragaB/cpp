@@ -8,4 +8,5 @@ class Funcionario : public Pessoa {
 public:
     Funcionario(Cpf cpf, std::string nome, float salario);
     ~Funcionario();
+    std::string recupera_nome();
 };

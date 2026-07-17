@@ -157,3 +157,9 @@ herança é um dos pilares de POO
 algo privado apenas a classe pdoe acessar, nem mesmo por herança é possível
 é possível as classes filhos acessarem caso o membro esteja incluído em um protected
 a partir de uma classe pai é possível especializar uma classe filho
+
+this -> pega o objeto atual, lembre-se disso(this -> ) é uma ótima forma de acessar um elemento que está dentro do protected
+
+é horrível repetir o nome de qualquer elemento de uma classe
+
+classe pai pode ser chamada de classe

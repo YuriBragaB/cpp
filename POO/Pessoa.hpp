@@ -3,10 +3,12 @@
 #include <string>
 
 class Pessoa {
+    void verifica_tamanho_do_nome();
+
+protected:
     Cpf cpf;
     std::string nome;
 
-    void verifica_tamanho_do_nome();
 public:
     Pessoa(Cpf cpf, std::string nome);
     

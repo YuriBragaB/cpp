@@ -7,6 +7,7 @@ class Conta {
 
     std::string numero;
     Titular titular;
+protected:    
     float saldo;
 
 public:
