@@ -2,7 +2,8 @@
 #include "Pessoa.hpp"
 #include <string>
 
-class Funcionario : public Pessoa {
+class Funcionario : public Pessoa 
+{
     float salario;
 
 public:

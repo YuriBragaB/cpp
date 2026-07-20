@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 
-class Cpf {
+class Cpf 
+{
     std::string cpf;
 
     void verifica_digitos(std::string cpf);

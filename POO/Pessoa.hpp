@@ -2,7 +2,8 @@
 #include "Cpf.hpp"
 #include <string>
 
-class Pessoa {
+class Pessoa 
+{
     void verifica_tamanho_do_nome();
 
 protected:

@@ -172,6 +172,7 @@ método virtual é um método que pode ser sobescrito
 ao ter um método virtual, em tempo de execução, ou seja, enquanto o programa está funcionando, a decisão de qual o método correto para se executar vai ser tomada
 
 override é uma palavra auxiliadora para avisar quando um método sobescreve o outro, evita um erro de nome, que é bem chato de achar
+override é posto no hpp da classse filho que ira fazer a alteração
 
 quando adiciona virutal o compilador adiciona um novo membro, que possui um ponteiro que aponta para a vtable
 virtual adiciona um novo memebro, que aponta para os métoddos corretos, por isso diminui o tempo de execução
@@ -182,3 +183,12 @@ não é para sobescrever um destrutor, é necessário adicionar
 se não marcar como vritual ocorre vazamento de memória
 é possível avisar que uma classe é a final do código
 quando a classe não é extendida é possível colocar um final, tirando a necessidade de utilziar um construtor
+
+quanto menor o código subescrito melhor, é necessário pensar em métodos mais simples, mesmo quie seja necessário criar um novo método menor, que seja utilizado na sobescrita
+
+se botar igual a 0 no hpp da classe pai é um método que não tem implementação, um método com virtual e = 0 é chamado de método totalmente virtual
+quando é criado um método totalmente virtual ele DEVE ser impletementado na classe filha, se tornando um classe completa
+
+classe abstrada é uma classe que possui um ou mais métodos puramente virtuais(métodos que só tem a interface que irão ser aplicados em uma classe herdeira)
+classes abstratas não podem ser chamadas
+classe abstratas são muito úteis para criar uma classe pai, pois facilita a ordanização e diminui muito a repeticão de código

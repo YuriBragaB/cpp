@@ -2,12 +2,14 @@
 #include <string>
 #include "Conta.hpp"
 #include "Conta_poupanca.hpp"
+#include "Conta_corrente.hpp"
 #include "Titular.hpp"
 #include "Cpf.hpp"
 #include "Funcionario.hpp"
 
-int main (void) {
-    Conta uma_conta("32", Titular(Cpf("08070396326"), "yuri braga"));
+int main (void) 
+{
+    Conta_corrente uma_conta("32", Titular(Cpf("08070396326"), "yuri braga"));
     uma_conta.depositar(500);
     uma_conta.sacar(100);
     std::cout << "o saldo da uma_conta é: " << uma_conta.recupera_saldo() << "\n";
