@@ -22,10 +22,10 @@ public:
     void sacar(float valor_a_sacar);
     void depositar(float valor_a_depositar);
 
-    std::string recupera_cpf();
-    std::string recupera_nome();
-    float recupera_saldo();
-    std::string recupera_numero();
+    std::string recupera_cpf() const;
+    std::string recupera_nome() const;
+    float recupera_saldo() const;
+    std::string recupera_numero() const;
     static int recupera_numero_de_contas();
     virtual float taxa_de_saque() const = 0;
 };

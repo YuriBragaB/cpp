@@ -3,10 +3,7 @@
 
 int Conta::numero_de_contas = 0;
 
-Conta::Conta(std::string numero, Titular titular)
-    :numero(numero),
-    titular(titular),
-    saldo(0)
+Conta::Conta(std::string numero, Titular titular) : numero(numero), titular(titular), saldo(0)
 {
     numero_de_contas ++;      
 }
@@ -46,22 +43,22 @@ int Conta::recupera_numero_de_contas()
     return numero_de_contas;
 }
 
-float Conta::recupera_saldo()
+float Conta::recupera_saldo() const
 {
     return saldo;
 }
 
-std::string Conta::recupera_nome()
+std::string Conta::recupera_nome() const
 {
     return titular.recupera_nome();
 }
 
-std::string Conta::recupera_cpf()
+std::string Conta::recupera_cpf() const
 {
     return titular.recupera_cpf();
 }
 
-std::string Conta::recupera_numero()
+std::string Conta::recupera_numero() const
 {
     return numero;
 }

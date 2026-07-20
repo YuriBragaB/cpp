@@ -192,3 +192,14 @@ quando é criado um método totalmente virtual ele DEVE ser impletementado na cl
 classe abstrada é uma classe que possui um ou mais métodos puramente virtuais(métodos que só tem a interface que irão ser aplicados em uma classe herdeira)
 classes abstratas não podem ser chamadas
 classe abstratas são muito úteis para criar uma classe pai, pois facilita a ordanização e diminui muito a repeticão de código
+
+polimorfismo é o 4 e último pilar de POO
+é possível se referir a um objeto e várias formas, por exemplo  uma classe filho é uma classe pai
+herança é utilizada para dois propositos: reutilizar código e o polimorfismo
+poli = muitos, morfismo = forma
+polimorfismo é o conceito que define que um objeto pode ser chamado de várias formas
+a ideia por trás do polimorfismo é poder referenciar o objeto pelo proprio tipo ou de uma forma mais generica, essa sendo de onde ele herdou suas características
+quando se refere a uma classe, você se limita a ela 
+permite que você escreva um código mais genérico, reutilizável e flexível. 
+om polimorfismo permite que objetos de diferentes classes podem ser tratados de maneira uniforme, simplificando a manutenção e a adição de novas funcionalidades ao sistema
+

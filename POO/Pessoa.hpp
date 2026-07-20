@@ -4,7 +4,8 @@
 
 class Pessoa 
 {
-    void verifica_tamanho_do_nome();
+private:
+    void verifica_tamanho_do_nome() const;
 
 protected:
     Cpf cpf;
@@ -13,6 +14,6 @@ protected:
 public:
     Pessoa(Cpf cpf, std::string nome);
     
-    std::string recupera_nome();
-    std::string recupera_cpf();
+    std::string recupera_nome() const;
+    std::string recupera_cpf() const;
 };
