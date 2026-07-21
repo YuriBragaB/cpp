@@ -212,3 +212,4 @@ herança multipla aumenta a complexidade do código
 
 classe pura é uma classe que possui apenas métodos virtuais
 classe puramente virtual só serve para ter uma interface no polimorfismo
+classe pura = interface(permite o polimorfismo)
