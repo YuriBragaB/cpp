@@ -1,6 +1,7 @@
 #pragma once
 #include "Cpf.hpp"
 #include <string>
+#include <iostream>
 
 class Pessoa 
 {

@@ -7,21 +7,21 @@
 #include "Cpf.hpp"
 #include "Funcionario.hpp"
 
+#include "pega_nome.hpp"
+#include "pega_cpf.hpp"
+#include "pega_numero.hpp"
+#include "escolhe_conta.hpp"
 
 int main (void) 
 {
-    Conta_poupanca segunda_conta("43", Titular(Cpf("38297779300"), "paola"));
-    Conta_corrente uma_conta("32", Titular(Cpf("08070396326"), "yuri braga"));
-    uma_conta.depositar(500);
-    uma_conta.sacar(100);
-    std::cout << "O saldo da uma_conta é: " << segunda_conta.recupera_saldo() << "\n";
-    std::cout << "O saldo da uma_conta é: " << uma_conta.recupera_saldo() << "\n";
+    int conta = escolhe_conta();
 
-    std::cout << "O seu nome é: " << uma_conta.recupera_nome() << "\n";
-    std::cout << "O seu cpf é: " << uma_conta.recupera_cpf() << "\n";
+    if (conta == 1){
+        Conta_poupanca segunda_conta(pega_numero(), Titular(Cpf(pega_cpf()), pega_nome()));
+    }
+    if (conta == 2){
+        Conta_corrente segunda_conta(pega_numero(), Titular(Cpf(pega_cpf()), pega_nome()));
+    }
 
-    uma_conta.transfere_para(segunda_conta, 200);
-    std::cout << "o saldo da uma_conta é: " << segunda_conta.recupera_saldo() << "\n";
-    std::cout << "O saldo da uma_conta é: " << uma_conta.recupera_saldo() << "\n";
     return 0;
 }
