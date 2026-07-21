@@ -2,7 +2,7 @@
 #include <string>
 #include "Pessoa.hpp"
 
-class Titular : public Pessoa 
+class Titular : public Pessoa
 {
 public:
     Titular(Cpf cpf, std::string nome);

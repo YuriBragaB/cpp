@@ -203,3 +203,12 @@ quando se refere a uma classe, você se limita a ela
 permite que você escreva um código mais genérico, reutilizável e flexível. 
 om polimorfismo permite que objetos de diferentes classes podem ser tratados de maneira uniforme, simplificando a manutenção e a adição de novas funcionalidades ao sistema
 
+em c++ é possível herdar de mais de uma classe que recebe o nome de herança multipla
+porém isso pode ser um problema, pois pode ser herdado métodos com os mesmos nomes, assim duplicando a herança, esse problema tem o nome de problema diamante
+o problema diamante disperdiça memória
+para evitar esse deperdício é necessário fazer uma herança virtual
+quando for fazer uma herança multipla é necessário evitar a ambiguidade
+herança multipla aumenta a complexidade do código
+
+classe pura é uma classe que possui apenas métodos virtuais
+classe puramente virtual só serve para ter uma interface no polimorfismo
