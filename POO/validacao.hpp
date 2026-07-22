@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include <limits>
 #include <windows.h>
 
-std::string pega_nome();
+void validacao(std::string validado, char genero);

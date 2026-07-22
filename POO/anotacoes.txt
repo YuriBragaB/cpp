@@ -213,3 +213,12 @@ herança multipla aumenta a complexidade do código
 classe pura é uma classe que possui apenas métodos virtuais
 classe puramente virtual só serve para ter uma interface no polimorfismo
 classe pura = interface(permite o polimorfismo)
+
+para utilizar o polimorfismo é necessário passar o objeto como referência(&)
+o c++ consegue usar a tabela virtual (vtable) para descobrir qual implementação chamar, msm passando só a referência da classe pai
+
+std::cin >> lê até encontrar um espaço
+std::getline lê até a tecla enter
+
+/n dá um enter, que pode pular o inline, caso isso acontecer é necessário utilizar a biblioteca <limits>:
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
