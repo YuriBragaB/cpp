@@ -3,4 +3,4 @@
 #include <iostream>
 #include <windows.h>
 
-void validacao(std::string validado, char genero, std::mensagem = "");
+void negado(std::string operacao, char genero, std::string motivo);

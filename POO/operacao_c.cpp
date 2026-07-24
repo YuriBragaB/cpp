@@ -14,7 +14,7 @@ void operacao_c(Conta& conta, int opcao)
     else if (opcao == 2) {
         float valor = 0.0;
 
-        std::cout << "Digite o valor que você deseja sacar\n";
+        std::cout << "Digite o valor que você deseja depositar\n";
         std::cin >> valor;
 
         conta.depositar(valor);

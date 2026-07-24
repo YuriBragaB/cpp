@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 #include "Titular.hpp"
+#include "validacao.hpp"
+#include "negado.hpp"
 
 class Conta 
 {

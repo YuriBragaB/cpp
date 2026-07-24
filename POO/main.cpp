@@ -19,7 +19,7 @@ int main (void)
     int conta = escolhe_conta();
 
     if (conta == 1){
-        Conta_poupanca uma_conta(pega_numero(), Titular(Cpf(pega_cpf()), pega_nome()));
+        Conta_poupanca uma_conta("34", Titular(Cpf("08070396326"), "yuri braga"));
         
         while (true) {
             int opcao = pega_opcao();
@@ -38,3 +38,4 @@ int main (void)
 
     return 0;
 }
+// pega_numero(), Titular(Cpf(pega_cpf()), pega_nome())

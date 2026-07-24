@@ -222,3 +222,8 @@ std::getline lê até a tecla enter
 
 /n dá um enter, que pode pular o inline, caso isso acontecer é necessário utilizar a biblioteca <limits>:
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+para encontrar uma saída em problemas difíceis abuse de tipos bool, caso não dê certo com apenas um adicione outro
+pense na otimização, principalmente quando procura algo, utilize break;
+
+para passar argumento opcional passa um valor padrão
